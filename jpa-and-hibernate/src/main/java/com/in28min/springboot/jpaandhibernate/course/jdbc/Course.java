@@ -1,23 +1,33 @@
 package com.in28min.springboot.jpaandhibernate.course.jdbc;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+//@Entity(name = "course-details")
+@Entity
 public class Course {
 
-    private Long id;
+    @Id
+    private long id;
+
+   // @Column(name = "name") no need because we have same name in the course table
     private String name;
+
+    // @Column(name = "author ") no need because we have same name in the course table 
     private String author;
 
 
-    public Course(Long id, String name, String author) {
+    public Course(long id, String name, String author) {
         this.id = id;
         this.name = name;
         this.author = author;
     }
 
-    public Long getId() {
+    public long getId() {
         return this.id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
